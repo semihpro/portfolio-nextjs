@@ -1,6 +1,6 @@
 import {useRouter} from "next/router";
 
-const navbar = ({data})=>{
+const Navbar = ({data})=>{
     const router = useRouter();
     const activeTab = router.pathname
     console.log(activeTab);
@@ -34,4 +34,4 @@ const navbar = ({data})=>{
         </nav>
     </>
 }
-export default navbar;
+export default Navbar;

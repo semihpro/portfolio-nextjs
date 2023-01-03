@@ -10,7 +10,7 @@ export default function Home() {
 
         <section className="about-text">
             {about.aboutme.split("\n").map(x=>{
-              return <p>{x}</p>
+              return <p key={x}>{x}</p>
             })}
         </section>
 
@@ -19,12 +19,12 @@ export default function Home() {
 
         <section className="service">
 
-          <h3 className="h3 service-title">What i'm doing</h3>
+          <h3 className="h3 service-title">What i&apos;m doing</h3>
 
           <ul className="service-list">
-            {about.what_I_am_doing.map(item=>{
+            {about.what_I_am_doing.map((item, index)=>{
               return <>
-                <li className="service-item">
+                <li className="service-item" key={index}>
                   <div className="service-icon-box">
                     <img src="/icon-dev.svg" alt="Web development icon" width="40"/>
                   </div>
