@@ -1,0 +1,15 @@
+{
+  "education": [
+    {"title": "Sakarya University", "years":"2006-2011", "context": ""},
+    {"title": "Sakarya University", "years":"2018-2022", "context": ""}
+  ],
+  "experience" :[
+    {"title": "Sakarya University Computer Teacher Education", "years":"2006-2011", "context": ""},
+    {"title": "Sakarya University Computer Engineering", "years":"2015-2019", "context": ""}
+  ],
+  "My skills": [
+    {"title": "Vuejs(2.6)", "percent": "100"},
+    {"title": "Reactjs", "percent": ""},
+    {"title": "Sakarya University", "percent": ""}
+  ]
+}

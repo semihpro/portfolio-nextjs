@@ -1,0 +1,9 @@
+{
+  "aboutme": "I like learning new technologies, sharing my knowledge, and creating products. I’ve used snippets that help us generate faster or more stable codes.\nMy weakness is that I am eager to learn the details of projects and technologies every time. Learning long progress takes time but helps me to understand all logic too. I don’t like to skip things without understanding.",
+  "what_I_am_doing": [
+    {"title": "Web Development", "context": "Vuejs, Reactjs, Nextjs(still learning), Nuxtjs, Javascript, Html and Css"},
+    {"title": "Backhand Developer", "context": "Nodejs, Expressjs, MSSql"},
+    {"title": "Libraries", "context": "Vuetify, Bootstrap Vue, Tailwind CSS, Vuexy, Blueprintjs" },
+    {"title": "My Code IDEs", "context": "Webstorm(current), Virsual Studio Code, Virsual Studio" }
+  ]
+}
