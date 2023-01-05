@@ -1,8 +1,15 @@
 import information from '../data/contact.json'
 import {info} from "next/dist/build/output/log";
 const sidebar =({data})=>{
+    const show_contact_onclick=()=>{
+        const sidebar = document.getElementById('sidebar');
+        let classNames =sidebar.getAttribute('class');
+        if (classNames==='sidebar') classNames = 'sidebar active';
+        else classNames = 'sidebar';
+        sidebar.setAttribute('class', classNames);
+    }
     return <>
-        <aside className="sidebar" data-sidebar="">
+        <aside id={'sidebar'} className="sidebar" data-sidebar="">
 
             <div className="sidebar-info">
 
@@ -16,7 +23,7 @@ const sidebar =({data})=>{
                     <p className="title">{information.proffession}</p>
                 </div>
 
-                <button className="info_more-btn" data-sidebar-btn="">
+                <button className="info_more-btn" data-sidebar-btn="" onClick={show_contact_onclick}>
                     <span>Show Contacts</span>
 
                     <ion-icon name="chevron-down" role="img" className="md hydrated"
@@ -34,8 +41,11 @@ const sidebar =({data})=>{
                     <li className="contact-item">
 
                         <div className="icon-box">
-                            <ion-icon name="mail-outline" role="img" className="md hydrated"
-                                      aria-label="mail outline"></ion-icon>
+                            <img src="/icons8-gmail-logo-50.png" name={'mail-outline'} alt="" className={'md hydrated'}/>
+                            {/*<ion-icon name="mail-outline" role="img" className="md hydrated"
+                                      aria-label="mail outline">
+
+                            </ion-icon>*/}
                         </div>
 
                         <div className="contact-info">
@@ -49,8 +59,10 @@ const sidebar =({data})=>{
                     <li className="contact-item">
 
                         <div className="icon-box">
-                            <ion-icon name="phone-portrait-outline" role="img" className="md hydrated"
-                                      aria-label="phone portrait outline"></ion-icon>
+                            <img src="/icons8-iphone-se-50.png" alt=""/>
+                            {/*<ion-icon name="phone-portrait-outline" role="img" className="md hydrated"
+                                      aria-label="phone portrait outline">
+                            </ion-icon>*/}
                         </div>
 
                         <div className="contact-info">
@@ -64,8 +76,9 @@ const sidebar =({data})=>{
                     <li className="contact-item">
 
                         <div className="icon-box">
-                            <ion-icon name="calendar-outline" role="img" className="md hydrated"
-                                      aria-label="calendar outline"></ion-icon>
+                            <img src="/icons8-calendar-50.png" alt="" style={{"width":"15px"}}/>
+                            {/*<ion-icon name="calendar-outline" role="img" className="md hydrated"
+                                      aria-label="calendar outline"></ion-icon>*/}
                         </div>
 
                         <div className="contact-info">
@@ -79,8 +92,9 @@ const sidebar =({data})=>{
                     <li className="contact-item">
 
                         <div className="icon-box">
-                            <ion-icon name="location-outline" role="img" className="md hydrated"
-                                      aria-label="location outline"></ion-icon>
+                            <img src="/icons8-visit-50.png" alt=""/>
+                            {/*<ion-icon name="location-outline" role="img" className="md hydrated"
+                                      aria-label="location outline"></ion-icon>*/}
                         </div>
 
                         <div className="contact-info">
@@ -119,7 +133,7 @@ const sidebar =({data})=>{
                     </li>
 
                 </ul>
-
+                <span style={{"font-size" : "8px"}}>icon by <a target="_blank" href="https://icons8.com">Icons8</a></span>
             </div>
 
         </aside>

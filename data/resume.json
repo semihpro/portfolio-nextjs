@@ -1,15 +1,33 @@
 {
   "education": [
-    {"title": "Sakarya University", "years":"2006-2011", "context": ""},
-    {"title": "Sakarya University", "years":"2018-2022", "context": ""}
+    {"title": "Sakarya University Computer Engineering", "years":"2018 - 2022", "context": "Software engineering program. We practised a lot different software language (c++, mssql etc...)"},
+    {"title": "Sakarya University Teacher Education", "years":"2006 - 2011", "context": "It is a computer scientist education program. We coded with c#, java, pascal, html, css."},
+    {"title": "Sakarya Technic High School", "years":"2000 - 2004", "context": "This is a technic personnel education school. My school focused commonly solve math problems with software. (Software languages: Pascal, Visual Basic)"}
   ],
-  "experience" :[
-    {"title": "Sakarya University Computer Teacher Education", "years":"2006-2011", "context": ""},
-    {"title": "Sakarya University Computer Engineering", "years":"2015-2019", "context": ""}
+  "experience": [
+    {
+      "title": "Front-End Web Developer",
+      "years":"2018 - 2022",
+      "context": "I was an active web developer and team leader.\nI wrote many Vue applications and two React Applications (SPA). And one Nuxtjs application and one Nodejs rest API. I am learning React application and Nextjs details right now.\nI used bootstrap and tailwind libraries in projects.\nWe used management structures such as agile in projects (interfaces were GitLab and GitHub for git version management).\nI have trained many programmers too. I checked their code and closed their work in the GitLab interface."
+    },
+    {
+      "title": "IT Techncian",
+      "years":"2015 - 2018",
+      "context": "Maintained office PCs, networks, and mobile devices.\n Refurbished PC systems and peripherals such as monitors, networking equipment, printers, and more.\nPatiently walked individuals through basic troubleshooting tasks.\nImaged and prepared new computers for integration into company networks and systems.\nI made a system that sends me the state of the system work by mail.\nIn the last year, I have been giving authorizations to SAP users. I was writing new reports. I was making the desired changes to the Written Reports."
+    },
+    {
+      "title": "Technical Support Representative",
+      "years":"2014 - 2015",
+      "context": "Provided Tier 1 IT support to non-technical internal users through desk-side support services.\nThe resolved a diverse range of technical issues across multiple systems and applications for customers and end-users across various time zones."
+    }
   ],
-  "My skills": [
+  "skills": [
     {"title": "Vuejs(2.6)", "percent": "100"},
-    {"title": "Reactjs", "percent": ""},
-    {"title": "Sakarya University", "percent": ""}
+    {"title": "Reactjs", "percent": "70"},
+    {"title": "Nuxtjs", "percent": "60"},
+    {"title": "Nodejs", "percent": "75"},
+    {"title": "Nextjs (still learning)", "percent": "50"},
+    {"title": "HTML, CSS, javascript etc..", "percent": "70"}
+
   ]
 }

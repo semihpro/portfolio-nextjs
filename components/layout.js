@@ -5,8 +5,8 @@ export default function Layout({children}){
         <>
             <SideBar/>
             <div className={"main-content"}>
-                <NavBar/>
                 <main>{children}</main>
+                <NavBar/>
             </div>
         </>
     )

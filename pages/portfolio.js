@@ -3,7 +3,7 @@ const portfolio = ({props})=>{
         <article className="portfolio active" data-page="portfolio">
 
             <header>
-                <h2 className="h2 article-title">Portfolio</h2>
+                <h2 className="h2 article-title">Portfolio <span style={{'font-size': '12px'}}>(these are not my pages, I still editing this site, sorry)</span></h2>
             </header>
 
             <section className="projects">

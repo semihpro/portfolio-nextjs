@@ -7,8 +7,14 @@
  * copyright 2022 @codewithsadee
  */
 
+.icon-box > img {
+  width: 18px;
+}
+.avatar-box {
+  border-radius: inherit;
+}
 
-
+ion-icon{visibility:hidden}.hydrated{visibility:inherit}
 
 
 /*-----------------------------------*\

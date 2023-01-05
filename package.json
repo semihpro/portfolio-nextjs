@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ionic/react": "^6.4.1",
+    "@ionic/react-router": "^6.4.1",
     "@next/font": "13.1.1",
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.1",
