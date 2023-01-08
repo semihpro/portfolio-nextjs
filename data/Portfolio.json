@@ -1,0 +1,58 @@
+{
+  "categories": [
+    {
+      "id": "0",
+      "value": "Web Development"
+    },
+    {
+      "id": "1",
+      "value": "Admin Panels"
+    },
+    {
+      "id": "2",
+      "value": "Backhand Development"
+    }
+  ],
+  "projects": [
+    {
+      "id": "0",
+      "order": "0",
+      "categories_id": "1",
+      "title": "INKA admin panel",
+      "image_url": "/My-Project-4.png"
+
+    },
+    {
+      "id": "1",
+      "order": "1",
+      "categories_id": "0",
+      "title": "Basefunder Webpage",
+      "image_url": "/My-Project-2.png"
+
+    },
+    {
+      "id": "2",
+      "order": "2",
+      "categories_id": "0",
+      "title": "Crypto",
+      "image_url": "/My-Project-3.jpg"
+
+    },
+    {
+      "id": "3",
+      "order": "3",
+      "categories_id": "1",
+      "title": "Dogacheck.me",
+      "image_url": "/My-Project-5.jpeg"
+
+    },
+    {
+      "id": "4",
+      "order": "4",
+      "categories_id": "1",
+      "title": "Deniz Yatırım Trading",
+      "image_url": "/My-Project-6.png"
+
+    }
+  ]
+}

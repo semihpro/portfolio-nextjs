@@ -1,20 +1,47 @@
+import {useState} from "react";
+import {useSelect} from "react"
+import portfoliojson from '../data/Portfolio.json'
 const portfolio = ({props})=>{
+    const [selected_category, set_selected_category]=useState('all');
+    const [filtered_list, set_filtered_list] = useState(portfoliojson.projects);
+    const onClick_category_select=(categories_id)=>{
+        set_selected_category(categories_id);
+        if(categories_id==="all") set_filtered_list(portfoliojson.projects);
+        else {
+            set_filtered_list(
+                portfoliojson.projects.filter(x=>x.categories_id===categories_id)
+            )
+            console.log(filtered_list);
+        }
+    }
     return <>
         <article className="portfolio active" data-page="portfolio">
 
             <header>
-                <h2 className="h2 article-title">Portfolio <span style={{'font-size': '12px'}}>(these are not my pages, I still editing this site, sorry)</span></h2>
+                <h2 className="h2 article-title">Portfolio</h2>
             </header>
 
             <section className="projects">
 
                 <ul className="filter-list">
-
                     <li className="filter-item">
-                        <button className="active" data-filter-btn="">All</button>
+                        <button
+                            className={selected_category==="all"?"active":""}
+                            onClick={()=>onClick_category_select("all")}
+                            data-filter-btn="">All</button>
                     </li>
+                    {
+                        portfoliojson.categories.map((item,index)=>{
+                            return <li className="filter-item" key={index}>
+                                <button
+                                    className={selected_category===item.id?"active":""}
+                                    onClick={()=>onClick_category_select(item.id)}
+                                    data-filter-btn="">{item.value}</button>
+                            </li>
+                        })
+                    }
 
-                    <li className="filter-item">
+                    {/*<li className="filter-item">
                         <button data-filter-btn="" className="">Web design</button>
                     </li>
 
@@ -24,7 +51,7 @@ const portfolio = ({props})=>{
 
                     <li className="filter-item">
                         <button data-filter-btn="" className="">Web development</button>
-                    </li>
+                    </li>*/}
 
                 </ul>
 
@@ -42,28 +69,47 @@ const portfolio = ({props})=>{
                     </button>
 
                     <ul className="select-list">
-
                         <li className="select-item">
                             <button data-select-item="">All</button>
                         </li>
-
-                        <li className="select-item">
-                            <button data-select-item="">Web design</button>
-                        </li>
-
-                        <li className="select-item">
-                            <button data-select-item="">Applications</button>
-                        </li>
-
-                        <li className="select-item">
-                            <button data-select-item="">Web development</button>
-                        </li>
+                        {
+                            portfoliojson.categories.map((item,index)=>{
+                                return <li className="select-item" key={index}>
+                                    <button data-select-item="">{item.value}</button>
+                                </li>
+                            })
+                        }
 
                     </ul>
 
                 </div>
 
                 <ul className="project-list">
+                    {
+                        filtered_list.map((item,index)=>{
+                            return <li className={"project-item active"} data-filter-item="" data-category="web development" key={index}>
+                                <a href="#">
+
+                                    <figure className="project-img">
+                                        <div className="project-item-icon-box">
+                                            <img src="/icons-eye.png" alt=""/>
+                                            {/*<ion-icon name="eye-outline" role="img" className="md hydrated"
+                                                      aria-label="eye outline"></ion-icon>*/}
+                                        </div>
+
+                                        <img src={item.image_url} alt="finance" loading="lazy"/>
+                                    </figure>
+
+                                    <h3 className="project-title">{item.title}</h3>
+
+                                    <p className="project-category">{portfoliojson.categories[item.categories_id].value}</p>
+
+                                </a>
+                            </li>
+                        })
+                    }
+
+{/*
 
                     <li className="project-item active" data-filter-item="" data-category="web development">
                         <a href="#">
@@ -74,29 +120,10 @@ const portfolio = ({props})=>{
                                               aria-label="eye outline"></ion-icon>
                                 </div>
 
-                                <img src="/project-1.jpg" alt="finance" loading="lazy"/>
+                                <img src="/My-Project-2.png" alt="orizon" loading="lazy"/>
                             </figure>
 
-                            <h3 className="project-title">Finance</h3>
-
-                            <p className="project-category">Web development</p>
-
-                        </a>
-                    </li>
-
-                    <li className="project-item active" data-filter-item="" data-category="web development">
-                        <a href="#">
-
-                            <figure className="project-img">
-                                <div className="project-item-icon-box">
-                                    <ion-icon name="eye-outline" role="img" className="md hydrated"
-                                              aria-label="eye outline"></ion-icon>
-                                </div>
-
-                                <img src="/project-2.png" alt="orizon" loading="lazy"/>
-                            </figure>
-
-                            <h3 className="project-title">Orizon</h3>
+                            <h3 className="project-title">Funding</h3>
 
                             <p className="project-category">Web development</p>
 
@@ -112,10 +139,10 @@ const portfolio = ({props})=>{
                                               aria-label="eye outline"></ion-icon>
                                 </div>
 
-                                <img src="/project-3.jpg" alt="fundo" loading="lazy"/>
+                                <img src="/My-Project-3.jpg" alt="fundo" loading="lazy"/>
                             </figure>
 
-                            <h3 className="project-title">Fundo</h3>
+                            <h3 className="project-title">Cripto</h3>
 
                             <p className="project-category">Web design</p>
 
@@ -131,12 +158,12 @@ const portfolio = ({props})=>{
                                               aria-label="eye outline"></ion-icon>
                                 </div>
 
-                                <img src="/project-4.png" alt="brawlhalla" loading="lazy"/>
+                                <img src="/My-Project-5.jpeg" alt="brawlhalla" loading="lazy"/>
                             </figure>
 
-                            <h3 className="project-title">Brawlhalla</h3>
+                            <h3 className="project-title">Admin Panels(Vuetify)</h3>
 
-                            <p className="project-category">Applications</p>
+                            <p className="project-category">Web Development</p>
 
                         </a>
                     </li>
@@ -150,12 +177,12 @@ const portfolio = ({props})=>{
                                               aria-label="eye outline"></ion-icon>
                                 </div>
 
-                                <img src="/project-5.png" alt="dsm." loading="lazy"/>
+                                <img src="/My-Project-6.png" alt="dsm." loading="lazy"/>
                             </figure>
 
-                            <h3 className="project-title">DSM.</h3>
+                            <h3 className="project-title">Trading Screens</h3>
 
-                            <p className="project-category">Web design</p>
+                            <p className="project-category">Web Development</p>
 
                         </a>
                     </li>
@@ -235,6 +262,7 @@ const portfolio = ({props})=>{
 
                         </a>
                     </li>
+*/}
 
                 </ul>
 

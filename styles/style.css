@@ -987,7 +987,9 @@ article.active {
 }
 
 .project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
-
+.project-item-icon-box > img {
+  width: 18px !important;
+}
 .project-item-icon-box {
   --scale: 0.8;
 

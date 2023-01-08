@@ -133,7 +133,7 @@ const sidebar =({data})=>{
                     </li>
 
                 </ul>
-                <span style={{"font-size" : "8px"}}>icon by <a target="_blank" href="https://icons8.com">Icons8</a></span>
+                {/*<span style={{"font-size" : "8px"}}>icon by <a target="_blank" href="https://icons8.com">Icons8</a></span>*/}
             </div>
 
         </aside>
