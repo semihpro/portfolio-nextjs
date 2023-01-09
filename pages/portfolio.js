@@ -1,17 +1,15 @@
 import {useState} from "react";
-import {useSelect} from "react"
 import portfoliojson from '../data/Portfolio.json'
-const portfolio = ({props})=>{
-    const [selected_category, set_selected_category]=useState('all');
+const Portfolio = function({props}){
+    const [Selected_category, Set_Selected_category]=useState('all');
     const [filtered_list, set_filtered_list] = useState(portfoliojson.projects);
     const onClick_category_select=(categories_id)=>{
-        set_selected_category(categories_id);
+        Set_Selected_category(categories_id);
         if(categories_id==="all") set_filtered_list(portfoliojson.projects);
         else {
             set_filtered_list(
                 portfoliojson.projects.filter(x=>x.categories_id===categories_id)
             )
-            console.log(filtered_list);
         }
     }
     return <>
@@ -26,7 +24,7 @@ const portfolio = ({props})=>{
                 <ul className="filter-list">
                     <li className="filter-item">
                         <button
-                            className={selected_category==="all"?"active":""}
+                            className={Selected_category==="all"?"active":""}
                             onClick={()=>onClick_category_select("all")}
                             data-filter-btn="">All</button>
                     </li>
@@ -34,7 +32,7 @@ const portfolio = ({props})=>{
                         portfoliojson.categories.map((item,index)=>{
                             return <li className="filter-item" key={index}>
                                 <button
-                                    className={selected_category===item.id?"active":""}
+                                    className={Selected_category===item.id?"active":""}
                                     onClick={()=>onClick_category_select(item.id)}
                                     data-filter-btn="">{item.value}</button>
                             </li>
@@ -271,4 +269,4 @@ const portfolio = ({props})=>{
         </article>
     </>
 }
-export default portfolio;
+export default Portfolio;
